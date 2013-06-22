@@ -19,8 +19,12 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
 }
 
+img {
+  max-width: 100%;
+}
+
 header {
-  margin: 48px;
+  margin: 48px 0;
   text-align: center;
 }
 
@@ -29,16 +33,11 @@ header {
   padding-right: 4px;
 }
 
-ul.tags {
-  list-style: none;
-  padding-left: 0;
-}
-
-dt, ul.tags li {
+dt {
   margin-top: 1em;
   font-weight: 800;
 }
-dt a:hover, ul.tags li a:hover {
+dt a:hover {
   background-color: hsl(55, 50%, 80%);
 }
 dt em {
@@ -58,6 +57,18 @@ dd a:hover {
   background-color: hsl(55, 50%, 80%);
 }
 
+dd ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+dd li {
+  display: inline;    
+}
+dd li:not(:last-of-type):after {
+  content:', ';
+}
+
 footer {
   font-size: 16px;
   margin-top: 6em;
@@ -74,7 +85,7 @@ footer a {
   color: #312;
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 1em;
+  margin: 0 2px 1em 2px;
   padding: 2px 10px 0;
 }
 footer .social a {
