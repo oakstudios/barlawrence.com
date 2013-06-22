@@ -1,0 +1,89 @@
+body {
+  background: #fafafa;
+  color: #312;
+  font-family: "apertura", "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 660px;
+}
+
+a {
+  background-color: transparent;
+  border-radius: 2px;
+  color: #312;
+  padding: 0;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+header {
+  margin: 48px;
+  text-align: center;
+}
+
+.ss-twitter:before {
+  vertical-align: middle;
+  padding-right: 4px;
+}
+
+ul.tags {
+  list-style: none;
+  padding-left: 0;
+}
+
+dt, ul.tags li {
+  margin-top: 1em;
+  font-weight: 800;
+}
+dt a:hover, ul.tags li a:hover {
+  background-color: hsl(55, 50%, 80%);
+}
+dt em {
+  font-weight: 400;
+  font-style: normal;
+}
+dd {
+  padding: 0 1em;
+}
+
+dt:hover + dd a,
+dd:hover a {
+  background-color: hsl(55, 80%, 90%);
+}
+dt a:hover,
+dd a:hover {
+  background-color: hsl(55, 50%, 80%);
+}
+
+footer {
+  font-size: 16px;
+  margin-top: 6em;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+}
+footer i {
+  color: #d63915;
+}
+footer a {
+  background-color: #eee;
+  color: #312;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 1em;
+  padding: 2px 10px 0;
+}
+footer .social a {
+  background-color: transparent;
+}
+footer a:hover {
+  background-color: #d5d5d5;
+}
+footer .social {
+  font-size: 14px;
+  margin-top: 1em;
+}

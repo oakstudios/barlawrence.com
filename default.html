@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset=utf-8 />
+	<title>{{site.title}} | {{title}} {% if type == "archive" %}Archive{% endif %}</title>
+	<link rel="stylesheet" href="/assets/style.css"  />
+  <link rel="stylesheet" href="//cdn.symbolset.com/e50f9502fcc9151fb1f671964600efa504506021/symbolset.css" />
+	<link rel="alternate" type="application/rss+xml" title="Bar Lawrence (RSS)" href="{{site.feed_url}}" />
+	<script type="text/javascript" src="//use.typekit.net/tpm0tpl.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+	<header>
+    <h1>
+      <a href="/"><img src="/assets/logo.svg" alt="{{site.title}}"></a>
+    </h1>
+  </header>
+  
+  {% if type == "post" %}
+  
+    <dl class="post" itemscope itemtype="http://schema.org/Recipe">
+      <dt itemprop="name">{{title}}</dt>
+      <dd itemprop="ingredients">{{body}}</dd>
+    </dl>
+  
+  {% elsif posts %}
+  
+    {% assign today = site.posts.first.created_at %}
+
+  	{% for post in posts %}
+    	{% if url != '/' or post.created_at >= today %}
+      <dl itemscope itemtype="http://schema.org/Recipe">
+        <dt itemprop="name"><a href="{{post.url}}">{{post.title}}</a></dt>
+        {% if type != "archive" %}
+        <dd itemprop="ingredients">{{post.body}}</dd>
+        {% endif %}
+      </dl>
+      {% endif %}
+    {% endfor %}
+
+  {% elsif type == 'taxonomy' %}
+  
+    {% for tag in tags %}
+    <ul class="tags">
+      <li><a href="{{tag.url}}">{{tag}}</a></li>
+    </ul>
+    {% endfor %}
+  
+  {% endif %}
+
+
+  <footer>
+    <a href="{{site.pages.menu.archive_url}}">Archive</a>
+    <p><b>
+      Menu updates weekly, by invitation only.
+    </b></p>
+    <p>&copy; {{site.date | date: "%Y"}} {{site.title}}</p>
+    <i class="ss-cocktail ss-symbolicons-line"></i>
+    <div class="social">
+      <p><a href="http://twitter.com/barlawrence" target="_blank" class="ss-twitter ss-social">@barlawrence</a></p>
+      <p><a href="{{site.feed_url}}" target="_blank" class="ss-icon ss-social">RSS</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
