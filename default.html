@@ -17,7 +17,6 @@
     </h1>
   </header>
   
-  
   {% if type == "post" %}
   
     <dl class="post" itemscope itemtype="http://schema.org/Recipe">
@@ -30,7 +29,7 @@
     {% assign today = site.posts.first.created_at %}
 
   	{% for post in posts %}
-    	{% if url != '/' or post.created_at >= today %}
+    	{% if url != '/' or post.created_at == today %}
       <dl class="post" itemscope itemtype="http://schema.org/Recipe">
         <dt itemprop="name"><a href="{{post.url}}">{{post.title}}</a></dt>
         {% if type != "archive" %}
@@ -43,26 +42,19 @@
   {% elsif type == 'taxonomy' %}
   
     {% assign sorted_tags = tags | sort:'value' %}
-
-    {% capture letters %}{% for tag in sorted_tags %}{% assign letter = tag.value | truncate:1, '' | capitalize %}{% if letter != old_letter %}{{letter}}{% endif %}{% assign old_letter = letter %}{% endfor %}{% endcapture %}
-    {% assign letter_array = letters | split:'' %}
     
-    {% for letter in letter_array %}
-      <dl class="tag" accesskey="{{letter}}">
-        <dt>{{letter}}</dt>
-        <dd>
-          <ul>
-          {% for tag in sorted_tags %}
-          {% assign this_letter = tag.value | truncate:1, '' | capitalize %}
-          {% if letter == this_letter %}<li><a href="{{tag.url}}">{{tag.value}}</a></li>{% endif %}
-          {% endfor %}
-          </ul>
-        </dd>
-      </dl>
+    <dl class="ingredients">
+    {% for tag in sorted_tags %}
+      {% assign letter = tag.value | truncate:1, '' | capitalize %}
+      {% if letter != previous_letter %}
+      <dt accesskey="{{letter}}">{{letter}}</dt>
+      {% endif %}
+      <dd><a href="{{tag.url}}">{{tag.value}}</a></dd>
+      {% assign previous_letter = letter %}
     {% endfor %}
+    </dl>
   
   {% endif %}
-
 
   <footer>
     <p><a href="/menu/archive">Archive</a> <a href="/menu/ingredients">Ingredients</a></p>
