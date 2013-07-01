@@ -16,7 +16,7 @@ a {
   color: #312;
   padding: 0;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
 }
 
 img {
