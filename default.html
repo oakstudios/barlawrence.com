@@ -15,7 +15,7 @@
       <a href="/"><img src="/assets/logo.svg" alt="{{site.title}}"></a>
     </h1>
   </header>
-  
+
   {% if type == "post" %}
   
     <dl class="post" itemscope itemtype="http://schema.org/Recipe">
@@ -25,10 +25,11 @@
   
   {% elsif posts %}
   
-    {% assign today = site.posts.first.created_at %}
+    {% assign today = site.posts.first.published_at | date: "%Y-%m-%d" %}
 
   	{% for post in posts %}
-    	{% if url != '/' or post.created_at == today %}
+  	  {% assign post_date = post.published_at | date: "%Y-%m-%d" %}
+    	{% if url != '/' or post_date == today %}
       <dl class="post" itemscope itemtype="http://schema.org/Recipe">
         <dt itemprop="name"><a href="{{post.url}}">{{post.title}}</a></dt>
         {% if type != "archive" %}
