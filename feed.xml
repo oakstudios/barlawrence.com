@@ -3,7 +3,27 @@
   <channel>
     <title>Bar Lawrence</title>
     <link>http://www.barlawrence.com</link>
-    <pubDate>Tue, 03 Jun 2014 22:50:53 -0000</pubDate>
+    <pubDate>Fri, 11 Jul 2014 20:58:34 -0000</pubDate>
+    
+    <item>
+      <title>Mexican 75</title>
+      <link>http://www.barlawrence.com/menu/mexican-75</link>
+      <pubDate>Fri, 11 Jul 2014 20:54:00 +0000</pubDate>
+      <author>Skylar Challand</author>
+      <guid>http://www.barlawrence.com/menu/mexican-75</guid>
+      <description>&lt;p&gt;&lt;a href=&quot;/menu/ingredients/champagne&quot;&gt;Sparkling wine&lt;/a&gt;, &lt;a href=&quot;/menu/ingredients/simple-syrup&quot;&gt;simple syrup&lt;/a&gt;, fresh &lt;a href=&quot;/menu/ingredients/lime&quot;&gt;lime&lt;/a&gt; juice, &lt;a href=&quot;/menu/ingredients/tequila&quot;&gt;tequila&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Beergarita</title>
+      <link>http://www.barlawrence.com/menu/beergarita</link>
+      <pubDate>Fri, 11 Jul 2014 20:51:00 +0000</pubDate>
+      <author>Skylar Challand</author>
+      <guid>http://www.barlawrence.com/menu/beergarita</guid>
+      <description>&lt;p&gt;Cheap &lt;a href=&quot;/menu/ingredients/beer&quot;&gt;beer&lt;/a&gt;, &lt;a href=&quot;/menu/ingredients/tequila&quot;&gt;tequila&lt;/a&gt;, frozen &lt;a href=&quot;/menu/ingredients/lime&quot;&gt;limeade&lt;/a&gt; concentrate.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Summer Rye</title>
