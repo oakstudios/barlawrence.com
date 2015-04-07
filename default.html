@@ -42,16 +42,14 @@
 
   {% elsif type == 'taxonomy' %}
   
-    {% assign sorted_tags = tags | sort:'value' %}
+    {% assign grouped_tags = tags | sort:'slug' | group_by:'slug.first' %}
     
     <dl class="ingredients">
-    {% for tag in sorted_tags %}
-      {% assign letter = tag.value | truncate:1, '' | capitalize %}
-      {% if letter != previous_letter %}
-      <dt accesskey="{{letter}}">{{letter}}</dt>
-      {% endif %}
+    {% for group in grouped_tags %}
+      <dt accesskey="{{group.name}}">{{group.name | capitalize}}</dt>
+      {% for tag in group.items %}
       <dd><a href="{{tag.url}}">{{tag.value}}</a></dd>
-      {% assign previous_letter = letter %}
+      {% endfor %}
     {% endfor %}
     </dl>
   
